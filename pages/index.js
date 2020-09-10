@@ -4,59 +4,49 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Rafael de Mattos</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+
+        <img src="/Icone Square.png" alt="Rafael de Mattos logo" className="author-logo"/>
+
+        <h2 className="title">
+          Rafael de Mattos
+        </h2>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          <code>Software Developer</code>
         </p>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="https://medium.com/@ramattos16" className="card">
+            <h3>📰 Artigos</h3>
+            <p>Leia meus artigos que publico no Medium!</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="https://github.com/rafamttz" className="card">
+            <h3>👨‍💻 Projetos</h3>
+            <p>Veja que eu ando aprontando nos meus projetos ...</p>
           </a>
 
-          <a
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="https://www.instagram.com/rafalivecoding" className="card">
+            <h3>📱 Instagram</h3>
+            <p>Veja o conteúdo que eu compartilho com a comunidade!</p>
           </a>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
+          <a href="https://www.linkedin.com/in/rafamttz" className="card">
+            <h3>😎 Sobre mim</h3>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Saiba um pouco sobre a minha pessoa!
             </p>
           </a>
         </div>
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
+        Feito por Rafael de Mattos
       </footer>
 
       <style jsx>{`
@@ -70,12 +60,19 @@ export default function Home() {
         }
 
         main {
-          padding: 5rem 0;
+          padding: 2rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+        }
+
+        .author-logo {
+          width: 22.5%;
+          height: 22.5%;
+          border-radius: 50%;
+          margin-bottom: 2.5%;
         }
 
         footer {
@@ -116,7 +113,7 @@ export default function Home() {
         .title {
           margin: 0;
           line-height: 1.15;
-          font-size: 4rem;
+          font-size: 3.5rem;
         }
 
         .title,
@@ -125,7 +122,7 @@ export default function Home() {
         }
 
         .description {
-          line-height: 1.5;
+          line-height: 1;
           font-size: 1.5rem;
         }
 
@@ -145,7 +142,7 @@ export default function Home() {
           flex-wrap: wrap;
 
           max-width: 800px;
-          margin-top: 3rem;
+          margin-top: 1.5rem;
         }
 
         .card {
