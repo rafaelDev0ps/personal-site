@@ -17,21 +17,21 @@ export default function Home() {
         </h2>
 
         <p className="description">
-          <code>Software Developer</code>
+          <code>Resolvendo problemas como <b>SRE/Devops</b></code>
         </p>
 
         <div className="grid">
-          <a href="https://medium.com/@ramattos16" className="card">
+          <a href="https://dev.to/rafamttz" className="card">
             <h3>📰 Artigos</h3>
-            <p>Leia meus artigos que publico no Medium!</p>
+            <p>Leia os artigos que eu escrevo!</p>
           </a>
 
-          <a href="https://github.com/rafamttz" className="card">
+          <a href="https://github.com/rafaelDev0ps" className="card">
             <h3>👨‍💻 Projetos</h3>
-            <p>Veja que eu ando aprontando nos meus projetos ...</p>
+            <p>Veja o que ando aprontando nos meus projetos...</p>
           </a>
 
-          <a href="https://www.instagram.com/rafalivecoding" className="card">
+          <a href="https://www.instagram.com/rafaeldevops/" className="card">
             <h3>📱 Instagram</h3>
             <p>Veja o conteúdo que eu compartilho com a comunidade!</p>
           </a>
@@ -39,9 +39,17 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/rafamttz" className="card">
             <h3>😎 Sobre mim</h3>
             <p>
-              Saiba um pouco sobre a minha pessoa!
+              Saiba um pouco sobre a minha carreira!
             </p>
           </a>
+
+          <a href="https://www.youtube.com/channel/UCdAg3KvCfl9FLyUOFAEGiOQ" className="card">
+            <h3>📺 Youtube</h3>
+            <p>
+              Aprenda sobre DevOps e Linux no meu canal!
+            </p>
+          </a>
+
         </div>
       </main>
 
