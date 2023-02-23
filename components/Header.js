@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function CustomHeader({ children }) {
   return (
     <>
-        <Image 
+        <img 
           src="/IconSquare.jpg" 
           alt="Rafael de Mattos logo" 
           className="rounded-full mt-15 mb-3"

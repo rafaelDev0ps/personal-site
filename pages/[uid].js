@@ -6,13 +6,25 @@ export default function Post({ page }) {
     console.log(page)
     return (
       <>
-        <h2 className="font-bold text-5xl pl-[12px] mb-[12px]">
-            <PrismicRichText className="text-2xl mb-[16px] font-medium" field={page.data.title} />
-        </h2>
-
-        <p className="p-[12px] mb-[24px]">
-            <PrismicRichText className="text-2xl mb-[16px] font-medium" field={page.data.slug} />
-        </p>
+        <div className="px-40 mx-40 ">
+            <PrismicRichText 
+                field={page.data.title}
+                components={{
+                    paragraph: ({ children }) => <h2 className="font-bold text-[32px] mb-16">{children}</h2>
+                }}
+            />
+            <div className='text-xl'>
+                <PrismicRichText 
+                    field={page.data.content} 
+                    components={{
+                        paragraph: ({ children }) => <p className="my-10 font-light">{children}</p>, 
+                        image: ({ children }) => {children},
+                        preformatted: ({ children }) => <pre className='text-sm w-full mb-10 max-h-[500px] overflow-auto bg-slate-200 p-2'>{children}</pre>,
+                    }}
+                />
+            </div>
+        </div>
+        
       </>
     );
 }
