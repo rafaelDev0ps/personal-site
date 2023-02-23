@@ -1,0 +1,39 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "wild"
+  },
+  "slug": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Proident amet excepteur cupidatat."
+        }
+      }
+    ]
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Fugiat enim anim id excepteur commodo aute veniam veniam aute amet amet sint exercitation. Deserunt in culpa excepteur labore in incididunt."
+        }
+      }
+    ]
+  },
+  "content": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Aliqua aliqua enim sit incididunt magna dolor tempor cupidatat incididunt tempor eiusmod. Magna laborum sit deserunt laboris occaecat Lorem proident Lorem aliquip pariatur eiusmod elit dolor dolor magna."
+        }
+      }
+    ]
+  }
+}
