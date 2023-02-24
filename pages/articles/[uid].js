@@ -1,6 +1,7 @@
 import * as prismicH from '@prismicio/helpers'
 import { createClient } from '../../prismicio'
 import { PrismicRichText } from "@prismicio/react";
+import Link from 'next/link';
 
 export default function Post({ page }) {
     return (
@@ -8,6 +9,11 @@ export default function Post({ page }) {
         <div className="px-40 mx-40 ">
           { page && (
             <>
+              <div className='text-sm mb-4'>
+                <Link href={'/articles'}>
+                  <p>Voltar</p>
+                </Link>
+              </div>
               <PrismicRichText 
                 field={page.data.title}
                 components={{
@@ -18,7 +24,7 @@ export default function Post({ page }) {
                 <PrismicRichText 
                   field={page.data.content} 
                   components={{
-                    paragraph: ({ children }) => <p className="my-10 font-light">{children}</p>, 
+                    paragraph: ({ children }) => <p className="my-10 font-normal">{children}</p>, 
                     image: ({ children }) => {children},
                     preformatted: ({ children }) => <pre className='text-sm w-full mb-10 max-h-[500px] overflow-auto bg-slate-200 p-2'>{children}</pre>,
                   }}

@@ -4,13 +4,15 @@ import PostSlug from '../../components/PostSlug'
 
 export default function Articles({ page }) {
   return (
-    <div className='flex flex-col min-h-screen'>
+    <div className='flex flex-col min-h-screen px-40'>
       <BlogHeader/>
-      <main className='flex flex-col justify-center items-center flex-1'>
-        <div className="grid grid-cols-3">
-            {page.results.map(post => (
-              <PostSlug key={post.id} post={post}/>
-            ))}
+      <main className='flex flex-col justify-right items-right mt-2 flex-1'>
+        <div className="">
+            <ul className='list-none'>
+                {page.results.map(post => (
+                <PostSlug key={post.id} post={post}/>
+                ))}
+            </ul>
           </div>
       </main>
     </div>
