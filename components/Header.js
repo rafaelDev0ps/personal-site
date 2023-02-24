@@ -11,7 +11,7 @@ export default function CustomHeader({ children }) {
           height={300}
         />
 
-        <h2 className="font-bold text-5xl p-[12px] m-[12px]">
+        <h2 className="font-bold text-5xl p-[12px] m-[12px] text-center">
           Rafael de Mattos
         </h2>
 

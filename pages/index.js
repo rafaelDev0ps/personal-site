@@ -15,7 +15,7 @@ export default function Home() {
 
         <CustomHeader/>
 
-        <div className="grid grid-cols-2">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2">
           <Link href="/articles">
             <Card title="📰 Artigos" subtitle="Leia os artigos sobre DevOps que eu escrevo!"/>
           </Link>
@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className='flex justify-center items-center mt-5 py-6'>
+      <footer className='flex justify-center text-center items-center mt-5 py-6'>
         Feito com NextJS e Tailwind CSS por Rafael de Mattos
       </footer>
     </div>

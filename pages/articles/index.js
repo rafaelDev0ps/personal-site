@@ -4,7 +4,7 @@ import PostSlug from '../../components/PostSlug'
 
 export default function Articles({ page }) {
   return (
-    <div className='flex flex-col min-h-screen px-40'>
+    <div className='flex flex-col min-h-screen lg:px-40 max-[425px]:px-4'>
       <BlogHeader/>
       <main className='flex flex-col justify-right items-right mt-2 flex-1'>
         <div className="">

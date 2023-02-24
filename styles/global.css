@@ -21,7 +21,6 @@ body {
 
 .bold-font {
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
 }
 
 .links {
@@ -33,4 +32,10 @@ body {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 425px) { 
+    .bold-font {
+        font-weight: 600;
+    }
 }

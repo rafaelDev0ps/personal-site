@@ -4,13 +4,13 @@ export default function BlogHeader({}) {
   return (
     <>
         <Link href={'/'}>
-          <p className="text-sm mb-3">Home</p>
+          <p className="text-sm mb-3 ">Home</p>
         </Link>
         <h2 className="font-bold text-5xl py-[20px]">
           Artigos
         </h2>
 
-        <p className="py-[12px]">
+        <p className="py-[12px] max-[425px]:text-sm">
           <code>Artigos sobre cultura DevOps, tutoriais e ferramentas</code>
         </p>
     </>

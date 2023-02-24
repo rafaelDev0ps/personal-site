@@ -10,14 +10,14 @@ export default function PostSlug({ post }) {
                     <PrismicRichText 
                         field={post.data.title}
                         components={{
-                            paragraph: ({ children }) => <h4 className="text-2xl font-medium">{children}</h4>
+                            paragraph: ({ children }) => <h4 className="text-2xl max-[425px]:text-lg font-medium">{children}</h4>
                         }}
                     />
-                    <p className="text-sm mb-2">Editado pela última vez em {toDate(post.last_publication_date)}</p>
+                    <p className="text-sm max-[425px]:text-xs mb-2 text-slate-300">Editado pela última vez em {toDate(post.last_publication_date)}</p>
                     <PrismicRichText 
                         field={post.data.slug}
                         components={{
-                            paragraph: ({ children }) => <p className="text-lg">{children}</p>
+                            paragraph: ({ children }) => <p className="text-lg max-[425px]:text-sm">{children}</p>
                         }}
                     />
                 </section>
