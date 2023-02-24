@@ -13,7 +13,6 @@ export default function Articles({ page }) {
             ))}
           </div>
       </main>
-      
     </div>
   );
 }
