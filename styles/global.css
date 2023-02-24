@@ -18,3 +18,19 @@ body {
     font-family: 'Work Sans', sans-serif;
     color:#000000CC;
 }
+
+.bold-font {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.links {
+    color: #0033ff8d;
+}
+
+.block-img {
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}

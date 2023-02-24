@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  preview:
+  update-site:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
