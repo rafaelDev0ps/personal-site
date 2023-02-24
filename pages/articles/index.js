@@ -1,6 +1,6 @@
-import BlogHeader from '../components/BlogHeader';
-import { createClient } from '../prismicio'
-import PostSlug from '../components/PostSlug'
+import BlogHeader from '../../components/BlogHeader';
+import { createClient } from '../../prismicio'
+import PostSlug from '../../components/PostSlug'
 
 export default function Articles({ page }) {
   return (

@@ -1,5 +1,5 @@
 import * as prismicH from '@prismicio/helpers'
-import { createClient } from '../prismicio'
+import { createClient } from '../../prismicio'
 import { PrismicRichText } from "@prismicio/react";
 
 export default function Post({ page }) {

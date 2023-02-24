@@ -16,7 +16,7 @@ const routes = [
   },
   {
     type: 'post',
-    path: '/:uid',
+    path: '/articles/:uid',
   },
 ]
 
