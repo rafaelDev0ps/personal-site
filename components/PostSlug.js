@@ -3,7 +3,6 @@ import Link from "next/link";
 import { toDate } from "../utils/date";
 
 export default function PostSlug({ post }) {
-    console.log(post.last_publication_date)
     return (
         <li>
             <Link href={'/articles/'+post.uid}>

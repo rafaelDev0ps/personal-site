@@ -24,7 +24,8 @@ export default function Post({ page }) {
                 <PrismicRichText 
                   field={page.data.content} 
                   components={{
-                    paragraph: ({ children }) => <p className="my-10 font-normal">{children}</p>, 
+                    heading3: ({ children }) => <h3 className="mt-5 mb-3 font-normal">{children}</h3>,
+                    paragraph: ({ children }) => <p className="my-7 font-normal">{children}</p>, 
                     image: ({ children }) => {children},
                     preformatted: ({ children }) => <pre className='text-sm w-full mb-10 max-h-[500px] overflow-auto bg-slate-200 p-2'>{children}</pre>,
                   }}
