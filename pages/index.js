@@ -17,26 +17,26 @@ export default function Home() {
 
         <div className="grid sm:grid-cols-1 lg:grid-cols-2">
           <Link href="/articles">
-            <Card title="📰 Artigos" subtitle="Leia os artigos sobre DevOps que eu escrevo!"/>
+            <Card title="📰 Articles" subtitle="Read the content I share with the community!"/>
           </Link>
           
 
           <a href="https://github.com/rafaelDev0ps">
-            <Card title="👨‍💻 Projetos" subtitle="Veja o que ando aprontando nos meus projetos..."/>
+            <Card title="👨‍💻 Projects" subtitle="Check what I'm hacking recently..."/>
           </a>
 
           <a href="https://www.linkedin.com/in/rafamttz">
-          <Card title="😎 Sobre mim" subtitle="Saiba um pouco sobre a minha carreira!"/>
+          <Card title="😎 About me" subtitle="Wanna know more about my carrer? Ok, click here!"/>
           </a>
 
           <a href="https://www.youtube.com/channel/UCdAg3KvCfl9FLyUOFAEGiOQ">
-          <Card title="📺 Youtube" subtitle="Aprenda sobre DevOps e Linux no meu canal!"/>
+          <Card title="📺 Youtube" subtitle="Learn about DevOps and Linux on my channel!"/>
           </a>
         </div>
       </main>
 
       <footer className='flex justify-center text-center items-center mt-5 py-6'>
-        Feito com NextJS e Tailwind CSS por Rafael de Mattos
+        Built with NextJS and Tailwind CSS by me ;P
       </footer>
     </div>
   )

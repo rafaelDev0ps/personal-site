@@ -16,7 +16,7 @@ export default function CustomHeader({ children }) {
         </h2>
 
         <p className="p-[12px] mb-[24px]">
-          <code>Resolvendo problemas como <b>SRE|Devops</b></code>
+          <code>DevOps engineer engineering things that need (or not) to be engineered</code>
         </p>
     </>
   );
