@@ -26,7 +26,7 @@ export default function Home() {
           </a>
 
           <a href="https://www.linkedin.com/in/rafamttz">
-          <Card title="😎 About me" subtitle="Wanna know more about my carrer? Ok, click here!"/>
+          <Card title="😎 About me" subtitle="Wanna know more about my career? Ok, click here!"/>
           </a>
 
           <a href="https://www.youtube.com/channel/UCdAg3KvCfl9FLyUOFAEGiOQ">
