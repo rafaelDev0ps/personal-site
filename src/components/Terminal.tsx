@@ -379,9 +379,9 @@ const Terminal = () => {
               autoComplete="off"
               spellCheck={false}
             />
-            {showCursor && (
+            {/* {showCursor && (
               <span className="terminal-cursor w-2 h-5 ml-1 inline-block"></span>
-            )}
+            )} */}
           </div>
         </form>
       )}
