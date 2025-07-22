@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Terminal design system with dark theme and mono fonts */
+
+@layer base {
+  :root {
+    /* Terminal dark theme */
+    --background: 0 0% 7%;
+    --foreground: 120 100% 80%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 120 100% 80%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 120 100% 80%;
+
+    --primary: 120 100% 80%;
+    --primary-foreground: 0 0% 7%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 120 100% 80%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 120 100% 50%;
+
+    /* Terminal specific colors */
+    --terminal-green: 120 100% 80%;
+    --terminal-green-bright: 120 100% 90%;
+    --terminal-blue: 200 100% 70%;
+    --terminal-yellow: 60 100% 80%;
+    --terminal-red: 0 100% 70%;
+    --terminal-gray: 0 0% 60%;
+    --terminal-cursor: 120 100% 50%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Keep same terminal theme for dark mode */
+    --background: 0 0% 7%;
+    --foreground: 120 100% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono overflow-hidden;
+  }
+  
+  /* Terminal specific styles */
+  .terminal-cursor {
+    background-color: hsl(var(--terminal-cursor));
+    animation: blink 1s infinite;
+  }
+  
+  .terminal-line {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+    line-height: 1.5;
+  }
+  
+  .terminal-prompt {
+    color: hsl(var(--terminal-green));
+  }
+  
+  .terminal-command {
+    color: hsl(var(--terminal-blue));
+  }
+  
+  .terminal-output {
+    color: hsl(var(--foreground));
+  }
+  
+  .terminal-comment {
+    color: hsl(var(--terminal-gray));
+  }
+  
+  .terminal-error {
+    color: hsl(var(--terminal-red));
+  }
+  
+  .terminal-success {
+    color: hsl(var(--terminal-green-bright));
+  }
+  
+  .terminal-highlight {
+    color: hsl(var(--terminal-yellow));
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
