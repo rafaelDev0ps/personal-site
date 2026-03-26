@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import rafaelProfile from '../assets/rafael-profile.jpg';
 
 interface TerminalLine {
   id: number;
@@ -63,6 +62,11 @@ const Terminal = () => {
       command: 'contact',
       description: 'Get in touch with Rafael',
       action: showContact
+    },
+    {
+      command: 'resume',
+      description: 'Download my resume (PDF)',
+      action: showResume
     }
   ];
 
@@ -159,16 +163,9 @@ const Terminal = () => {
       <div className="terminal-line">
         <div className="mt-2">
           <div className="terminal-highlight">About Rafael de Mattos</div>
-          <div className="mt-2 flex items-start gap-4">
-            <img 
-              src={rafaelProfile} 
-              alt="Rafael de Mattos" 
-              className="w-16 h-16 rounded-full border border-terminal-green"
-            />
-            <div>
-              <div className="terminal-output">DevOps Engineer passionate about automation, infrastructure, and sharing knowledge.</div>
-              <div className="mt-2 terminal-gray">Skills: Docker, Kubernetes, AWS, Linux, CI/CD, Infrastructure as Code</div>
-            </div>
+          <div className="mt-2">
+            <div className="terminal-output">DevOps Engineer passionate about automation, infrastructure, and sharing knowledge.</div>
+            <div className="mt-2 terminal-gray">Skills: Docker, Kubernetes, AWS, Linux, CI/CD, Infrastructure as Code</div>
           </div>
         </div>
       </div>
@@ -301,6 +298,32 @@ const Terminal = () => {
       </div>
     );
     addLine(contactContent);
+  }
+
+  function showResume() {
+    const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL || "";
+    window.open(resumeUrl, '_blank');
+
+    const resumeContent = (
+      <div className="terminal-line">
+        <div className="mt-2">
+          <div className="terminal-highlight">📄 Resume</div>
+          <div className="mt-2 terminal-output">Downloading resume... If it didn't start automatically, use the link below:</div>
+          <div className="mt-2">
+            <span className="terminal-command">Download: </span>
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="terminal-blue hover:terminal-green-bright transition-colors underline"
+            >
+              resume.pdf
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+    addLine(resumeContent);
   }
 
   function clearTerminal() {

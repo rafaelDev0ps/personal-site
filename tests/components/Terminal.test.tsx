@@ -70,6 +70,24 @@ describe("Terminal", () => {
     ).toBeInTheDocument();
   });
 
+  it("handles the resume command", () => {
+    const testUrl = "https://pub-test.r2.dev/resume.pdf";
+    vi.stubEnv("NEXT_PUBLIC_RESUME_URL", testUrl);
+    const openSpy = vi.spyOn(window, "open").mockImplementation(() => null);
+    renderAndCompleteAnimation();
+
+    const input = screen.getByRole("textbox");
+    fireEvent.change(input, { target: { value: "resume" } });
+    fireEvent.submit(input.closest("form")!);
+
+    expect(screen.getByText(/Resume/)).toBeInTheDocument();
+    expect(screen.getByText(/resume.pdf/)).toBeInTheDocument();
+    expect(openSpy).toHaveBeenCalledWith(testUrl, "_blank");
+
+    openSpy.mockRestore();
+    vi.unstubAllEnvs();
+  });
+
   it("handles the clear command", () => {
     renderAndCompleteAnimation();
 
