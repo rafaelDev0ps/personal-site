@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Terminal design system with dark theme and mono fonts */
-
 @layer base {
   :root {
-    /* Terminal dark theme */
     --background: 0 0% 7%;
     --foreground: 120 100% 80%;
 
@@ -35,7 +32,6 @@
     --input: 0 0% 15%;
     --ring: 120 100% 50%;
 
-    /* Terminal specific colors */
     --terminal-green: 120 100% 80%;
     --terminal-green-bright: 120 100% 90%;
     --terminal-blue: 200 100% 70%;
@@ -47,24 +43,16 @@
     --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Keep same terminal theme for dark mode */
     --background: 0 0% 7%;
     --foreground: 120 100% 80%;
   }
@@ -78,42 +66,41 @@
   body {
     @apply bg-background text-foreground font-mono overflow-hidden;
   }
-  
-  /* Terminal specific styles */
+
   .terminal-cursor {
     background-color: hsl(var(--terminal-cursor));
     animation: blink 1s infinite;
   }
-  
+
   .terminal-line {
     font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
     line-height: 1.5;
   }
-  
+
   .terminal-prompt {
     color: hsl(var(--terminal-green));
   }
-  
+
   .terminal-command {
     color: hsl(var(--terminal-blue));
   }
-  
+
   .terminal-output {
     color: hsl(var(--foreground));
   }
-  
+
   .terminal-comment {
     color: hsl(var(--terminal-gray));
   }
-  
+
   .terminal-error {
     color: hsl(var(--terminal-red));
   }
-  
+
   .terminal-success {
     color: hsl(var(--terminal-green-bright));
   }
-  
+
   .terminal-highlight {
     color: hsl(var(--terminal-yellow));
   }

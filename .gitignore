@@ -8,8 +8,9 @@
 # testing
 /coverage
 
-# next.js
+# vinext / next.js
 /.next/
+/.vinext/
 /out/
 
 # production

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useRef } from 'react';
 import rafaelProfile from '../assets/rafael-profile.jpg';
 
