@@ -61,6 +61,11 @@
 @layer base {
   * {
     @apply border-border;
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
   }
 
   body {

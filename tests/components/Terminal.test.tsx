@@ -35,7 +35,7 @@ describe("Terminal", () => {
     renderAndCompleteAnimation();
 
     expect(screen.getByRole("textbox")).toBeInTheDocument();
-    expect(screen.getAllByText(/rafael@devops:~\$/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/guest_user@host \$/).length).toBeGreaterThan(0);
   });
 
   it("handles the help command", () => {

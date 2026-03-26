@@ -19,15 +19,12 @@ const Terminal = () => {
   const [currentInput, setCurrentInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
+  const [history, setHistory] = useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
 
   const commands: Command[] = [
-    {
-      command: 'help',
-      description: 'Show available commands',
-      action: showHelp
-    },
     {
       command: 'about',
       description: 'Display information about Rafael',
@@ -37,21 +34,6 @@ const Terminal = () => {
       command: 'articles',
       description: 'View articles and blog posts',
       action: showArticles
-    },
-    {
-      command: 'projects',
-      description: 'Check out recent projects',
-      action: showProjects
-    },
-    {
-      command: 'youtube',
-      description: 'Learn DevOps and Linux on YouTube',
-      action: showYoutube
-    },
-    {
-      command: 'linkedin',
-      description: 'Connect on LinkedIn',
-      action: showLinkedIn
     },
     {
       command: 'clear',
@@ -64,9 +46,29 @@ const Terminal = () => {
       action: showContact
     },
     {
+      command: 'help',
+      description: 'Show available commands',
+      action: showHelp
+    },
+    {
+      command: 'linkedin',
+      description: 'Connect on LinkedIn',
+      action: showLinkedIn
+    },
+    {
+      command: 'projects',
+      description: 'Check out recent projects',
+      action: showProjects
+    },
+    {
       command: 'resume',
       description: 'Download my resume (PDF)',
       action: showResume
+    },
+    {
+      command: 'skills',
+      description: 'Technologies and expertise',
+      action: showSkills
     }
   ];
 
@@ -147,8 +149,8 @@ const Terminal = () => {
         <div className="mt-2">
           <div className="terminal-highlight">Available commands:</div>
           {commands.map((cmd, index) => (
-            <div key={index} className="mt-1">
-              <span className="terminal-command">{cmd.command.padEnd(12)}</span>
+            <div key={index} className="mt-1 flex">
+              <span className="terminal-command inline-block w-28 shrink-0">{cmd.command}</span>
               <span className="terminal-gray">- {cmd.description}</span>
             </div>
           ))}
@@ -164,8 +166,7 @@ const Terminal = () => {
         <div className="mt-2">
           <div className="terminal-highlight">About Rafael de Mattos</div>
           <div className="mt-2">
-            <div className="terminal-output">DevOps Engineer passionate about automation, infrastructure, and sharing knowledge.</div>
-            <div className="mt-2 terminal-gray">Skills: Docker, Kubernetes, AWS, Linux, CI/CD, Infrastructure as Code</div>
+            <div className="terminal-output">I started my career as Software Developer in 2018 and since then I've got curious about how the applications works under the hood. So I started to study more about Linux and cloud technologies and started to assume responsabilities around theses areas. Since then I fall in love with the DevOps culture and started to study more about it, now I'm a DevOps Engineer passionate about automation, infrastructure, and a lot of programming. I created a lot of things over the years i order to understand better how the things works, feel free to check my personal projects using the "projects" command.</div>
           </div>
         </div>
       </div>
@@ -230,35 +231,6 @@ const Terminal = () => {
     addLine(projectsContent);
   }
 
-  function showYoutube() {
-    const youtubeContent = (
-      <div className="terminal-line">
-        <div className="mt-2">
-          <div className="terminal-highlight">📺 YouTube Channel</div>
-          <div className="mt-2 terminal-output">Learn about DevOps and Linux on my channel!</div>
-          <div className="mt-2">
-            <span className="terminal-command">Channel: </span>
-            <a 
-              href="https://www.youtube.com/channel/UCdAg3KvCfl9FLyUOFAEGiOQ" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="terminal-blue hover:terminal-green-bright transition-colors underline"
-            >
-              Rafael de Mattos DevOps
-            </a>
-          </div>
-          <div className="mt-2 terminal-gray">
-            Content includes:<br/>
-            • DevOps tutorials and best practices<br/>
-            • Linux system administration<br/>
-            • Container technologies<br/>
-            • Infrastructure automation
-          </div>
-        </div>
-      </div>
-    );
-    addLine(youtubeContent);
-  }
 
   function showLinkedIn() {
     const linkedinContent = (
@@ -290,9 +262,8 @@ const Terminal = () => {
           <div className="terminal-highlight">📧 Get In Touch</div>
           <div className="mt-2 terminal-output">Feel free to reach out for collaboration or questions!</div>
           <div className="mt-2 terminal-gray">
+            • Email: <a href="mailto:devops@rafaelmattos.com" className="terminal-blue hover:terminal-green-bright transition-colors underline">devops@rafaelmattos.com</a><br/>
             • LinkedIn: <a href="https://www.linkedin.com/in/rafamttz" target="_blank" rel="noopener noreferrer" className="terminal-blue hover:terminal-green-bright transition-colors underline">linkedin.com/in/rafamttz</a><br/>
-            • GitHub: <a href="https://github.com/rafaelDev0ps" target="_blank" rel="noopener noreferrer" className="terminal-blue hover:terminal-green-bright transition-colors underline">github.com/rafaelDev0ps</a><br/>
-            • YouTube: <a href="https://www.youtube.com/channel/UCdAg3KvCfl9FLyUOFAEGiOQ" target="_blank" rel="noopener noreferrer" className="terminal-blue hover:terminal-green-bright transition-colors underline">Rafael de Mattos DevOps</a>
           </div>
         </div>
       </div>
@@ -326,6 +297,28 @@ const Terminal = () => {
     addLine(resumeContent);
   }
 
+  function showSkills() {
+    const skillsContent = (
+      <div className="terminal-line">
+        <div className="mt-2">
+          <div className="terminal-highlight">🛠 Skills & Technologies</div>
+          <div className="mt-2 terminal-output">
+            I've been working with different technologies over my career, in the past few years
+            I dedicated to study and apply my knowledge on multi-cloud solutions (AWS, Azure and GCP)
+            and implement different cloud architectures starting from simple workloads using containers
+            and/or Kubernetes to intensive data processing, AI and so on.
+          </div>
+          <div className="mt-2 terminal-output">
+            Most of the infrastructure I provisioned using Terraform, Ansible or any Golang/Python
+            automation script, also I'm used to monitor applications and other resources with monitoring
+            tools like Datadog, Prometheus and Grafana following best practices of monitoring systems.
+          </div>
+        </div>
+      </div>
+    );
+    addLine(skillsContent);
+  }
+
   function clearTerminal() {
     setLines([]);
   }
@@ -344,16 +337,17 @@ const Terminal = () => {
     e.preventDefault();
     if (!currentInput.trim()) return;
 
-    // Add command line to history
+    setHistory(prev => [...prev, currentInput.trim()]);
+    setHistoryIndex(-1);
+
     const commandLine = (
       <div className="terminal-line">
-        <span className="terminal-prompt">rafael@devops:~$ </span>
+        <span className="terminal-prompt">guest_user@host $ </span>
         <span className="terminal-command">{currentInput}</span>
       </div>
     );
     addLine(commandLine);
 
-    // Execute command
     const command = commands.find(cmd => cmd.command === currentInput.trim().toLowerCase());
     
     if (command) {
@@ -371,6 +365,28 @@ const Terminal = () => {
     setCurrentInput('');
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (history.length === 0) return;
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const newIndex = historyIndex === -1 ? history.length - 1 : Math.max(0, historyIndex - 1);
+      setHistoryIndex(newIndex);
+      setCurrentInput(history[newIndex]);
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex === -1) return;
+      const newIndex = historyIndex + 1;
+      if (newIndex >= history.length) {
+        setHistoryIndex(-1);
+        setCurrentInput('');
+      } else {
+        setHistoryIndex(newIndex);
+        setCurrentInput(history[newIndex]);
+      }
+    }
+  };
+
   const handleTerminalClick = () => {
     if (inputRef.current && !isTyping) {
       inputRef.current.focus();
@@ -379,37 +395,35 @@ const Terminal = () => {
 
   return (
     <div 
-      className="min-h-screen bg-background text-foreground font-mono p-4 cursor-text"
+      className="h-screen bg-background text-foreground font-mono p-4 cursor-text flex flex-col"
       onClick={handleTerminalClick}
     >
       <div 
         ref={terminalRef}
-        className="max-w-4xl mx-auto space-y-1 mb-4 max-h-[calc(100vh-8rem)] overflow-y-auto"
+        className="space-y-1 flex-1 overflow-y-auto"
       >
         {lines.filter(line => line && line.content).map(line => (
           <div key={line.id}>{line.content}</div>
         ))}
-      </div>
 
-      {!isTyping && (
-        <form onSubmit={handleInputSubmit} className="max-w-4xl mx-auto">
-          <div className="flex items-center">
-            <span className="terminal-prompt mr-2">rafael@devops:~$ </span>
-            <input
-              ref={inputRef}
-              type="text"
-              value={currentInput}
-              onChange={(e) => setCurrentInput(e.target.value)}
-              className="flex-1 bg-transparent outline-none text-terminal-blue caret-terminal-cursor"
-              autoComplete="off"
-              spellCheck={false}
-            />
-            {/* {showCursor && (
-              <span className="terminal-cursor w-2 h-5 ml-1 inline-block"></span>
-            )} */}
-          </div>
-        </form>
-      )}
+        {!isTyping && (
+          <form onSubmit={handleInputSubmit}>
+            <div className="flex items-center">
+              <span className="terminal-prompt mr-2">guest_user@host $ </span>
+              <input
+                ref={inputRef}
+                type="text"
+                value={currentInput}
+                onChange={(e) => setCurrentInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="flex-1 bg-transparent outline-none text-terminal-blue caret-terminal-cursor"
+                autoComplete="true"
+                spellCheck={false}
+              />
+            </div>
+          </form>
+        )}
+      </div>
     </div>
   );
 };
