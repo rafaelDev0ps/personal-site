@@ -175,32 +175,14 @@ const Terminal = () => {
   }
 
   function showArticles() {
-    const articlesContent = (
+    addLine(
       <div className="terminal-line">
-        <div className="mt-2">
-          <div className="terminal-highlight">📰 Articles & Blog Posts</div>
-          <div className="mt-2 terminal-output">
-            I regularly share content with the DevOps community covering:
-          </div>
-          <div className="mt-1 terminal-gray">• Container orchestration with Kubernetes</div>
-          <div className="terminal-gray">• Infrastructure automation</div>
-          <div className="terminal-gray">• Linux system administration</div>
-          <div className="terminal-gray">• CI/CD best practices</div>
-          <div className="mt-2">
-            <span className="terminal-command">Visit: </span>
-            <a 
-              href="https://rafaelmattos.dev/articles" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="terminal-blue hover:terminal-green-bright transition-colors underline"
-            >
-              rafaelmattos.dev/articles
-            </a>
-          </div>
-        </div>
+        <span className="terminal-success">Loading articles...</span>
       </div>
     );
-    addLine(articlesContent);
+    setTimeout(() => {
+      window.location.href = '/articles';
+    }, 300);
   }
 
   function showProjects() {
@@ -395,7 +377,7 @@ const Terminal = () => {
 
   return (
     <div 
-      className="h-screen bg-background text-foreground font-mono p-4 cursor-text flex flex-col"
+      className="h-screen overflow-hidden bg-background text-foreground font-mono p-4 cursor-text flex flex-col"
       onClick={handleTerminalClick}
     >
       <div 
